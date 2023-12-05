@@ -1,0 +1,8 @@
+{
+    "interactiveElement": {
+        "id": 789,
+        "projectId": 456,
+        "type": "QUIZ",
+        "data": "クイズの内容"
+    }
+}

@@ -1,0 +1,41 @@
+<mat-expansion-panel *ngFor="let comment of comments">
+  <mat-expansion-panel-header>
+    <mat-panel-title>
+      <!-- {{ comment.authorId | userName }} - {{ comment.createdAt | date:'short' }} -->
+    </mat-panel-title>
+    <mat-panel-description>
+      <!-- {{ comment.content | slice:0:100 }}... -->
+    </mat-panel-description>
+  </mat-expansion-panel-header>
+  <p>{{ comment.content }}</p>
+</mat-expansion-panel>
+
+<!-- public id: number,
+public authorId: number,
+public projectId: number,
+public content: string,
+public createdAt: Date -->
+
+<form (ngSubmit)="emit(commentContent)">
+  <mat-form-field appearance="outline" class="comment-input">
+    <mat-label>コメントを追加</mat-label>
+    <textarea matInput [(ngModel)]="commentContent" name="commentContent" required></textarea>
+  </mat-form-field>
+  <button mat-raised-button color="primary" type="submit">送信</button>
+</form>
+
+<!-- **Notes:**
+- The `*ngFor` directive is used to iterate over the `comments` array passed to the component.
+- The `mat-expansion-panel` component from Angular Material is used to display each comment.
+- The `mat-panel-title` and `mat-panel-description` are used to display the author's name (converted from ID using a hypothetical `userName` pipe) and a snippet of the comment content.
+- The full comment content is displayed within the `mat-expansion-panel`.
+- A form is provided at the bottom of the component to submit new comments. It uses the `ngSubmit` directive to emit an event with the new comment content when the form is submitted.
+- The `mat-form-field` and `textarea` are used to create a multiline input field for entering the comment.
+- The `mat-raised-button` is used for the submit button.
+- The `userName` pipe and `date` pipe are used to display the author's name and the comment's creation date, respectively. These pipes are assumed to be part of the application's localization strategy for displaying content in Japanese.
+- The `slice` pipe is used to limit the displayed content in the `mat-panel-description` to the first 100 characters followed by an ellipsis.
+- The `ngModel` directive is used for two-way data binding on the `commentContent` variable, which holds the new comment's content.
+- The `name` attribute is set on the `textarea` to link it with the `ngModel` directive.
+- The `required` attribute is added to ensure that the comment cannot be submitted empty.
+
+Please note that the actual implementation of userName pipe, date formatting, and localization for Japanese language support is not included in this snippet and would need to be implemented separately. -->

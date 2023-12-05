@@ -1,0 +1,7 @@
+<mat-dialog-content class="mat-typography">
+  <p>{{ message }}</p>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-button mat-dialog-close>{{ 'キャンセル' | translate }}</button>
+  <button mat-button color="primary" (click)="confirm.emit()">{{ '確認' | translate }}</button>
+</mat-dialog-actions>

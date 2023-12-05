@@ -1,0 +1,9 @@
+{
+    "user": {
+        "id": 1,
+        "name": "山田太郎",
+        "email": "yamada@example.com",
+        "role": "ADMIN",
+        "profilePictureUrl": "https://example.com/profile.jpg"
+    }
+}

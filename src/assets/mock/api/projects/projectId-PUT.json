@@ -1,0 +1,22 @@
+{
+    "project": {
+        "id": 1,
+        "name": "更新されたプロジェクト",
+        "description": "更新されたプロジェクトの説明",
+        "ownerId": 1,
+        "templateId": 1,
+        "content": "更新されたプロジェクトのコンテンツ",
+        "status": "ACTIVE",
+        "collaborators": [
+            {
+                "id": 2,
+                "name": "ユーザー2",
+                "email": "user2@example.com",
+                "role": "USER",
+                "profilePictureUrl": "https://example.com/user2.jpg"
+            }
+        ],
+        "createdAt": "2022-01-01T00:00:00Z",
+        "updatedAt": "2022-01-04T00:00:00Z"
+    }
+}

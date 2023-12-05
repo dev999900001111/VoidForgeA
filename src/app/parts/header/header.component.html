@@ -1,0 +1,58 @@
+<mat-toolbar color="primary" class="header-toolbar">
+  <!-- Application Logo or Name -->
+  <span class="header-logo">
+    <a [routerLink]="'/'" mat-button>
+      <!-- Replace with actual logo image if available -->
+      <img src="assets/img/logo.png" alt="アプリケーションのロゴ" height="30">
+      <!-- Application Name -->
+      <span class="header-title">アプリ名</span>
+    </a>
+  </span>
+
+  <!-- Spacer to push navigation and profile to the edges -->
+  <span class="header-spacer"></span>
+
+  <!-- Navigation Links (if any) -->
+  <div class="header-navigation">
+    <!-- Replace with actual navigation links -->
+    <a [routerLink]="'../dashboard'" mat-button>ダッシュボード</a>
+    <a [routerLink]="'../projects'" mat-button>プロジェクト</a>
+    <!-- Add more navigation links as needed -->
+  </div>
+
+  <!-- User Profile and Logout -->
+  <div class="header-profile">
+    <!-- User Profile -->
+    <button mat-icon-button [matMenuTriggerFor]="profileMenu">
+      <!-- TODO とりあえずコメントアウト -->
+      <!-- <img *ngIf="user.profilePictureUrl; else defaultIcon" [src]="user?.profilePictureUrl" alt="{{ user?.name }}"
+        class="profile-picture">
+      <ng-template #defaultIcon>
+        <mat-icon>account_circle</mat-icon>
+      </ng-template> -->
+    </button>
+    <mat-menu #profileMenu="matMenu">
+      <button mat-menu-item>
+        <mat-icon>person</mat-icon>
+        <span>プロフィール</span>
+      </button>
+      <button mat-menu-item>
+        <mat-icon>settings</mat-icon>
+        <span>設定</span>
+      </button>
+      <!-- Add more profile related links if necessary -->
+    </mat-menu>
+
+    <!-- Logout Button -->
+    <button mat-icon-button (click)="logout.emit()">
+      <mat-icon>exit_to_app</mat-icon>
+      <span class="sr-only">ログアウト</span>
+    </button>
+  </div>
+</mat-toolbar>
+<!-- 
+Please note that the above HTML assumes that you have the Angular Material library installed and properly configured in
+your project. The `assets/logo.png` should be replaced with the actual path to your application's logo, and the
+navigation links should be updated to reflect the actual routes in your application. The `sr-only` class is typically
+used to hide elements visually but keep them accessible to screen readers for accessibility purposes. If your project
+does not have such a class, you should add the appropriate CSS or use an alternative method to achieve the same result. -->

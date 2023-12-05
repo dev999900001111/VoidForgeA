@@ -1,0 +1,31 @@
+<div class="" *ngIf="loaded">
+    <button mat-button (click)="submit()">OK</button>
+    <section class="grid-container grid-4x2">
+        <ng-container *ngFor="let chatKey of chatKeys;let cIndex=index;">
+            <div class="grid-item" [ngClass]="{
+                    'loading': chatResponses[chatKey].status===0,
+                    'fine': chatResponses[chatKey].status===1,
+                    'selected': chatResponses[chatKey].status===1 ,
+                    'unselected': chatResponses[chatKey].status===1,
+                }">
+                <div class="feature-item" (click)="view(chatKey)">プラン {{cIndex+1}}</div>
+                <div class="text-body" #textBodyElem>
+                    <markdown [data]="chatResponses[chatKey].text"></markdown>
+                </div>
+            </div>
+        </ng-container>
+    </section>
+</div>
+<style>
+    .grid-4x2 {
+        /* 2列のレイアウト */
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+    }
+
+    .text-body {
+        max-height: 300px;
+        overflow-y: auto;
+        padding: 1.5em;
+    }
+</style>

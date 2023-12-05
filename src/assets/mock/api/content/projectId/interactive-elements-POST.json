@@ -1,0 +1,8 @@
+{
+    "interactiveElement": {
+        "id": 1,
+        "projectId": 1,
+        "type": "QUIZ",
+        "data": "{\"question\":\"クイズの質問\",\"choices\":[\"選択肢1\",\"選択肢2\",\"選択肢3\"],\"correctChoice\":1}"
+    }
+}

@@ -1,0 +1,15 @@
+Here's a list of the variables, constants, ViewChild, and functions that would be needed in the TypeScript file (`app.component.ts`) to support the provided Angular template:
+
+1. Variables:
+   - `user`, Type: `User`, Description: An object representing the logged-in user's information. This would typically include properties like name, email, etc.
+
+2. Constants:
+   - No explicit constants are defined in the HTML template for the `mat-table` column names. However, if a `mat-table` were to be used within the `router-outlet`, you would define constants for the column names in the component that contains the `mat-table`.
+
+3. ViewChild:
+   - `sidenav`, Type: `MatSidenav`, Description: A reference to the `MatSidenav` instance to control its open and close behavior programmatically.
+
+4. Functions:
+   - `onLogout`, Type: `Function`, Description: A method to be called when the user clicks the logout button. This function would handle the logic for logging the user out of the application.
+
+Please note that the actual implementation details, such as the `User` type or the `MatSidenav` type, would depend on the specific application and its dependencies. The `User` type would typically be an interface or a class defined in the application to model the user data, and `MatSidenav` is a component provided by Angular Material.

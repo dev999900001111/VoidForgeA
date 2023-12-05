@@ -1,0 +1,134 @@
+<ng-container *ngIf="project">
+  <div class="center-pane">
+    <mat-card class="project-creation-edit-card">
+      <mat-card-header>
+        <mat-card-title>
+          {{ project.id>=0 ? 'プロジェクトを編集' : '新しいプロジェクト' }}
+        </mat-card-title>
+      </mat-card-header>
+
+      <mat-card-content>
+        <div>このページでは、プロジェクトの要件定義書を作成します。</div>
+        <form (ngSubmit)="submitPrompt(project.name)">
+          <!--
+          <mat-form-field appearance="fill">
+            <mat-label>プロジェクト名</mat-label>
+            <input matInput placeholder="プロジェクト名を入力してください" [(ngModel)]="project.name" name="projectName">
+          </mat-form-field>
+          -->
+          <mat-form-field appearance="fill" class="full-width">
+            <mat-label>プロジェクト名</mat-label>
+            <input matInput placeholder="プロジェクトの名前を決めてください。" [(ngModel)]="project.name" name="projectDescription" />
+          </mat-form-field>
+          <!-- Content Editor Placeholder -->
+          <!-- <div class="content-editor"> -->
+          <!-- <p>コンテンツエディターはこちら</p> -->
+          <!-- The actual rich text editor will be integrated here -->
+          <!-- </div> -->
+        </form>
+      </mat-card-content>
+
+      <mat-card-actions>
+        <button mat-button color="primary" (click)="submitPrompt(project.name)">送信</button>
+      </mat-card-actions>
+    </mat-card>
+
+    <!-- <ng-container *ngFor="let chatKey of chatKeys;" class="response">
+      <markdown *ngIf="chatResponses[chatKey].status===1" [data]="chatResponses[chatKey].text"></markdown>
+    </ng-container> -->
+
+    <!-- <markdown *ngFor="let chatKey of chatKeys;" class="response" [data]="chatResponses[chatKey].text"></markdown> -->
+    <ng-container *ngIf="phase==='loaded'">
+      <h2 style="width: 100%;text-align: center;">要件に最もマッチするプランを選んでください。</h2>
+      <!-- <div>
+        <p style="width: 100%;text-align: center;">チェックボックスで細かく選択することもできます。</p>
+      </div> -->
+      <div style="width: 100%;text-align: center;">
+        <button mat-button (click)="submit(true)" [disabled]="!document">skip</button>
+        <button mat-button (click)="submit()">OK</button>
+      </div>
+    </ng-container>
+
+    <section class="feature-list-container">
+      <ng-container *ngIf="phase==='before';then loadingTmpl;else loadedTmpl"></ng-container>
+      <ng-template #loadedTmpl>
+        <div class="feature-list" *ngFor="let chatKey of chatKeys;let cIndex=index;" [ngClass]="{
+            'loading': chatResponses[chatKey].status===0,
+            'fine': chatResponses[chatKey].status===1,
+            'selected': chatResponses[chatKey].status===1 && selectedCaseIndex===cIndex,
+            'unselected': chatResponses[chatKey].status===1 && selectedCaseIndex!==cIndex,
+          }">
+          <div class="feature-item" (click)="selectCase(chatKey)">プラン {{cIndex+1}}</div>
+          <div>
+            <label *ngFor="let feature of chatResponses[chatKey].featureList;let fIndex=index;" class="feature-item"
+              for="c-{{cIndex}}-{{fIndex}}" [ngClass]="{
+                'not-specified': chatResponses[chatKey].status===1 && selectedCaseIndex!==cIndex && !chatResponses[chatKey].featureList[fIndex].specified,
+                'specified': chatResponses[chatKey].status===1 && selectedCaseIndex!==cIndex && chatResponses[chatKey].featureList[fIndex].specified,
+              }">
+              <input type="checkbox" class="feature-checkbox" name="c-{{cIndex}}-{{fIndex}}"
+                id="c-{{cIndex}}-{{fIndex}}" [(ngModel)]="feature.checked" />
+              <markdown [innerHTML]="(fIndex+1)+' : '+feature.feature" class="feature-label"></markdown>
+            </label>
+          </div>
+        </div>
+      </ng-template>
+      <ng-template #loadingTmpl>
+        <ng-container *ngFor="let chatKey of chatKeys;let cIndex=index;">
+          <div class="feature-list" [ngClass]="{
+            'loading': chatResponses[chatKey].status===0,
+            'fine': chatResponses[chatKey].status===1,
+            'selected': chatResponses[chatKey].status===1 && selectedCaseIndex===cIndex,
+            'unselected': chatResponses[chatKey].status===1 && selectedCaseIndex!==cIndex,
+            }">
+            <div class="feature-item">プラン {{cIndex+1}}</div>
+            <markdown [data]="chatResponses[chatKey].text" (click)="selectCase(chatKey)" #featureList></markdown>
+          </div>
+        </ng-container>
+      </ng-template>
+    </section>
+  </div>
+
+  <!-- Save/Publish Dialog Placeholder -->
+  <ng-template #savePublishDialog>
+    <app-save-publish-dialog (save)="save.emit(project)"></app-save-publish-dialog>
+  </ng-template>
+
+  <style>
+    .project-creation-edit-card {
+      width: 50%;
+      min-width: 400px;
+      max-width: 600px;
+    }
+
+    .full-width {
+      width: 100%;
+    }
+
+    .content-editor {
+      height: 200px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      padding: 10px;
+      margin-bottom: 20px;
+    }
+
+    .not-specified {
+      opacity: 0.5;
+    }
+
+    .specified {
+      /* color: antiquewhite; */
+    }
+  </style>
+  <!-- **Notes:**
+  - The `mat-card` component is used to create a card layout for the project creation and editing form.
+  - The `mat-form-field` and `input` elements are used for text input fields, with `ngModel` binding to the `project` object properties for two-way data binding.
+  - A placeholder div with the class `content-editor` is included to represent where the rich content editor will be integrated.
+  - The `mat-card-actions` section contains buttons for saving and publishing the project. The save button emits the `project` object to the parent component, while the publish button triggers a dialog (represented by a placeholder here).
+  - The `savePublishDialog` is a placeholder for the actual `SavePublishDialog` component, which will handle the save and publish actions.
+  - The HTML is designed to be minimalistic and user-friendly, with labels and placeholders in Japanese as per the requirement.
+  - Angular Material components are used to ensure a polished design.
+  - The `@Output` event emitter is named generically (`save.emit`) as per the instruction not to use a name specified for `@Output`.
+  - The actual integration of the rich content editor and the dialog component is not included in this HTML snippet, as it would require additional context and code outside the scope of this prompt.
+  -->
+</ng-container>

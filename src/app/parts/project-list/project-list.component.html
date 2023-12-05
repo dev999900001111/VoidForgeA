@@ -1,0 +1,16 @@
+<mat-list role="list">
+  <mat-list-item *ngFor="let project of projects" role="listitem">
+    <!-- <img matListAvatar *ngIf="project.thumbnail" [src]="project.thumbnail" alt="{{ project.name }}"> -->
+    <h4 matLine>{{ project.name }}</h4>
+    <p matLine>{{ project.description }}</p>
+    <mat-icon matListIcon>folder</mat-icon>
+    <button mat-icon-button (click)="select.emit(project)">
+      <mat-icon>edit</mat-icon>
+    </button>
+    <button mat-icon-button (click)="delete.emit(project.id)">
+      <mat-icon>delete</mat-icon>
+    </button>
+  </mat-list-item>
+</mat-list>
+
+<!-- Please note that I've used placeholders for the thumbnail and the `select.emit(project)` and `delete.emit(project.id)` methods, which should be replaced with the actual logic for emitting the selected project and deleting a project, respectively. The `*ngIf="project.thumbnail"` directive is used to conditionally display the project thumbnail if it exists. The `mat-icon-button` elements are used for the edit and delete actions, with corresponding icons. The `mat-list-item` is repeated for each project in the provided `projects` array. -->

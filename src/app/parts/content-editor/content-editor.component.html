@@ -1,0 +1,44 @@
+<mat-card class="content-editor-card">
+  <mat-toolbar class="content-editor-toolbar">
+    <span>{{ 'コンテンツエディタ' | translate }}</span>
+    <span class="example-spacer"></span>
+    <button mat-icon-button (click)="format('bold')">
+      <mat-icon>format_bold</mat-icon>
+    </button>
+    <button mat-icon-button (click)="format('italic')">
+      <mat-icon>format_italic</mat-icon>
+    </button>
+    <button mat-icon-button (click)="format('underline')">
+      <mat-icon>format_underlined</mat-icon>
+    </button>
+    <button mat-icon-button (click)="format('align_left')">
+      <mat-icon>format_align_left</mat-icon>
+    </button>
+    <button mat-icon-button (click)="format('align_center')">
+      <mat-icon>format_align_center</mat-icon>
+    </button>
+    <button mat-icon-button (click)="format('align_right')">
+      <mat-icon>format_align_right</mat-icon>
+    </button>
+    <button mat-icon-button (click)="insert('list')">
+      <mat-icon>format_list_bulleted</mat-icon>
+    </button>
+    <button mat-icon-button (click)="insert('image')">
+      <mat-icon>image</mat-icon>
+    </button>
+    <button mat-icon-button (click)="insert('video')">
+      <mat-icon>videocam</mat-icon>
+    </button>
+  </mat-toolbar>
+  <mat-form-field class="content-editor-textarea" appearance="outline" floatLabel="always">
+    <mat-label>{{ 'コンテンツを編集' | translate }}</mat-label>
+    <textarea matInput [(ngModel)]="content" (ngModelChange)="change.emit($event)" rows="10"></textarea>
+  </mat-form-field>
+  <div class="content-editor-actions">
+    <button mat-raised-button color="primary" (click)="saveContent()">
+      {{ '保存' | translate }}
+    </button>
+  </div>
+</mat-card>
+
+<!-- Please note that the above HTML assumes that you have the necessary methods (`format`, `insert`, `saveContent`) and translation pipes (`translate`) implemented in your TypeScript component file. The `change.emit($event)` is used to emit the content change event, and the `[(ngModel)]="content"` is used for two-way binding of the content property. The `mat-toolbar` and `mat-icon-button` elements are used to create a toolbar with formatting options. The `mat-form-field` and `textarea` are used for the content editing area, and the `button` at the bottom is for saving the content. -->

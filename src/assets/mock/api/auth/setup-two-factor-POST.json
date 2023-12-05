@@ -1,0 +1,7 @@
+{
+    "twoFactorAuthDetails": {
+        "userId": 1,
+        "secret": "ABCD1234EFGH5678",
+        "qrCodeUrl": "https://example.com/qrcode/user/1"
+    }
+}

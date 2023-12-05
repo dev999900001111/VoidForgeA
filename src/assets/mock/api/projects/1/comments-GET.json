@@ -1,0 +1,18 @@
+{
+    "comments": [
+        {
+            "id": 1,
+            "authorId": 2,
+            "projectId": 1,
+            "content": "プロジェクトの進捗はどうですか？",
+            "createdAt": "2023-04-01T12:00:00Z"
+        },
+        {
+            "id": 2,
+            "authorId": 3,
+            "projectId": 1,
+            "content": "新しいデザインが気に入りました！",
+            "createdAt": "2023-04-02T15:30:00Z"
+        }
+    ]
+}

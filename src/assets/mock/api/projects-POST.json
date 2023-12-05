@@ -1,0 +1,22 @@
+{
+    "project": {
+        "id": 103,
+        "name": "プロジェクトガンマ",
+        "description": "ウェブサイトリニューアルプロジェクト",
+        "ownerId": 4,
+        "templateId": 3,
+        "content": "リニューアル計画の概要",
+        "status": "DELETED",
+        "collaborators": [
+            {
+                "id": 5,
+                "name": "佐藤恵子",
+                "email": "keiko.sato@example.com",
+                "role": "ADMIN",
+                "profilePictureUrl": "https://example.com/profiles/keiko.jpg"
+            }
+        ],
+        "createdAt": "2023-03-15T09:00:00Z",
+        "updatedAt": "2023-03-20T12:00:00Z"
+    }
+}

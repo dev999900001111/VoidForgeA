@@ -1,0 +1,32 @@
+<!-- app.component.html -->
+<mat-sidenav-container class="sidenav-container">
+    <mat-sidenav #sidenav mode="side" opened="false">
+        <!-- Side navigation content can be added here if needed -->
+    </mat-sidenav>
+
+    <mat-sidenav-content>
+        <!-- HeaderComponent with user information and logout functionality -->
+        <!-- <app-header [user]="user" (logout)="onLogout()"></app-header> -->
+
+        <!-- Main content area where RouterOutlet will render the appropriate component -->
+        <div class="content">
+            <router-outlet></router-outlet>
+        </div>
+
+        <!-- FooterComponent with static links and information -->
+        <!-- <app-footer></app-footer> -->
+    </mat-sidenav-content>
+</mat-sidenav-container>
+
+<!-- Additional styles can be added here if needed -->
+<style>
+    .sidenav-container {
+        height: 100%;
+    }
+
+    .content {
+        padding: 20px;
+        display: flex;
+        justify-content: center;
+    }
+</style>

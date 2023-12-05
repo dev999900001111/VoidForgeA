@@ -1,0 +1,10 @@
+{
+    "user": {
+        "id": 1,
+        "name": "山田太郎",
+        "email": "taro.yamada@example.com",
+        "role": "USER",
+        "profilePictureUrl": "https://example.com/profiles/taro.jpg"
+    },
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9"
+}

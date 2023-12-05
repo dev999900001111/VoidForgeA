@@ -1,0 +1,10 @@
+<mat-dialog-content>
+  <h2 mat-dialog-title>バージョンに戻す</h2>
+  <p>選択したバージョン X.Y にプロジェクトを戻してもよろしいですか？この操作は取り消すことができません。</p>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-button mat-dialog-close>キャンセル</button>
+  <button mat-button [mat-dialog-close]="true" cdkFocusInitial>戻す</button>
+</mat-dialog-actions>
+
+<!-- Please note that the text is in Japanese as requested, and Angular Material components are used to create a polished design. The "Revert" button is set to close the dialog and return `true`, which can be used by the calling component to confirm the action. The "Cancel" button simply closes the dialog without returning any value. -->

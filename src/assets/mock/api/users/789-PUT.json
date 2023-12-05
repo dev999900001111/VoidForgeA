@@ -1,0 +1,9 @@
+{
+    "user": {
+        "id": 789,
+        "name": "鈴木一郎",
+        "email": "ichiro.suzuki@example.com",
+        "role": "ADMIN",
+        "profilePictureUrl": "https://example.com/images/users/789.png"
+    }
+}

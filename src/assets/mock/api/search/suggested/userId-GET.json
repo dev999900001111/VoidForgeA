@@ -1,0 +1,16 @@
+{
+    "content": [
+        {
+            "id": 1,
+            "name": "コンテンツ1",
+            "description": "コンテンツ1の説明",
+            "thumbnailUrl": "https://example.com/thumbnail1.jpg"
+        },
+        {
+            "id": 2,
+            "name": "コンテンツ2",
+            "description": "コンテンツ2の説明",
+            "thumbnailUrl": "https://example.com/thumbnail2.jpg"
+        }
+    ]
+}

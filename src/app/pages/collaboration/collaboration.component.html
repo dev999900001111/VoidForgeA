@@ -1,0 +1,30 @@
+<mat-tab-group mat-align-tabs="start" class="collaboration-tab-group">
+  <!-- Sharing Settings Tab -->
+  <mat-tab label="共有設定">
+    <ng-template matTabContent>
+      <!-- The SharingSettingsComponent is displayed within this tab -->
+      <!-- TODO 一旦コメントアウト -->
+      <!-- <app-sharing-settings [project]="project"></app-sharing-settings> -->
+    </ng-template>
+  </mat-tab>
+
+  <!-- Comments Tab -->
+  <mat-tab label="コメント">
+    <ng-template matTabContent>
+      <!-- The CommentsSectionComponent is displayed within this tab -->
+      <!-- TODO 一旦コメントアウト -->
+      <!-- <app-comments-section [projectId]="project.id"></app-comments-section> -->
+    </ng-template>
+  </mat-tab>
+
+  <!-- Version Control Tab -->
+  <mat-tab label="バージョン管理">
+    <ng-template matTabContent>
+      <!-- The VersionControlComponent is displayed within this tab -->
+      <!-- TODO 一旦コメントアウト -->
+      <!-- <app-version-control [projectId]="project.id"></app-version-control> -->
+    </ng-template>
+  </mat-tab>
+</mat-tab-group>
+
+<!-- This HTML snippet for the `CollaborationComponent` uses Angular Material components to create a tab group with three tabs for "Sharing Settings", "Comments", and "Version Control". Each tab contains a child component that is responsible for its specific functionality. The `project` object is passed as an input to the `SharingSettingsComponent`, while the `projectId` is passed to both the `CommentsSectionComponent` and the `VersionControlComponent`. The labels for the tabs are provided in Japanese as requested. -->

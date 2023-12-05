@@ -1,0 +1,44 @@
+{
+    "projects": [
+        {
+            "id": 101,
+            "name": "プロジェクトアルファ",
+            "description": "新しいマーケティングキャンペーンのためのプロジェクト",
+            "ownerId": 1,
+            "templateId": 1,
+            "content": "プロジェクトの内容",
+            "status": "ACTIVE",
+            "collaborators": [
+                {
+                    "id": 2,
+                    "name": "山田太郎",
+                    "email": "taro.yamada@example.com",
+                    "role": "USER",
+                    "profilePictureUrl": "https://example.com/profiles/taro.jpg"
+                }
+            ],
+            "createdAt": "2023-04-01T09:00:00Z",
+            "updatedAt": "2023-04-01T12:00:00Z"
+        },
+        {
+            "id": 102,
+            "name": "プロジェクトベータ",
+            "description": "新製品開発プロジェクト",
+            "ownerId": 1,
+            "templateId": 2,
+            "content": "製品開発の詳細",
+            "status": "ARCHIVED",
+            "collaborators": [
+                {
+                    "id": 3,
+                    "name": "鈴木一郎",
+                    "email": "ichiro.suzuki@example.com",
+                    "role": "USER",
+                    "profilePictureUrl": "https://example.com/profiles/ichiro.jpg"
+                }
+            ],
+            "createdAt": "2022-12-01T09:00:00Z",
+            "updatedAt": "2023-01-01T12:00:00Z"
+        }
+    ]
+}

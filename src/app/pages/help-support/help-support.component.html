@@ -1,0 +1,25 @@
+<mat-accordion multi="true">
+  <mat-expansion-panel *ngFor="let faq of faqs">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        {{ faq.question }}
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+    <p>{{ faq.answer }}</p>
+  </mat-expansion-panel>
+</mat-accordion>
+
+<div class="feedback-section">
+  <button mat-raised-button color="primary" (click)="openFeedbackDialog()">
+    フィードバックを送信
+  </button>
+</div>
+
+Explanation:
+- The `<mat-accordion>` component is used to create an accordion for the FAQ section. The `multi` attribute allows multiple panels to be opened simultaneously.
+- The `*ngFor` directive iterates over the `faqs` array provided by the `&#64;Input` to create an expansion panel for each FAQ.
+- The `<mat-expansion-panel>` component represents each FAQ item. When clicked, it expands to show the answer.
+- The `<mat-expansion-panel-header>` contains the `<mat-panel-title>` which displays the FAQ question.
+- The `<p>` tag within the `<mat-expansion-panel>` displays the FAQ answer.
+- The "feedback-section" `div` contains a button that, when clicked, will trigger the `openFeedbackDialog()` method to open the `FeedbackSubmissionDialog`. The button uses the `mat-raised-button` directive to give it a raised appearance and the `color` attribute to apply the primary color theme.
+- The button text "フィードバックを送信" translates to "Submit Feedback" in Japanese, as per the requirement to localize the screen for Japanese users.

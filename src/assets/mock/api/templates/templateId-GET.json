@@ -1,0 +1,8 @@
+{
+    "template": {
+        "id": 1,
+        "name": "テンプレート1",
+        "description": "テンプレート1の説明",
+        "thumbnailUrl": "https://example.com/thumbnail1.jpg"
+    }
+}

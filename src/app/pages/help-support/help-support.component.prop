@@ -1,0 +1,12 @@
+```plaintext
+Variables:
+- faqs, Array<{ question: string, answer: string }>, An array of objects where each object contains a 'question' and an 'answer' string for the FAQ section.
+
+Functions:
+- openFeedbackDialog(), void, A function that is called when the "Submit Feedback" button is clicked. It is responsible for opening the feedback dialog where users can submit their feedback.
+
+Constants:
+- There are no explicit constants defined in the provided HTML snippet. However, if the mat-table column names are to be considered constants, they are not present in the snippet. If they were, they would be defined as an array of strings representing the column names in the mat-table component.
+```
+
+Note: The provided HTML snippet does not include a `mat-table` component, so there are no column names to list as constants. If a `mat-table` were present, the column names would typically be defined in the TypeScript file as an array of strings. Additionally, since the HTML snippet does not include any `ViewChild` references, none are listed. If there were `ViewChild` references, they would be listed with their selector strings and the type of element or component they are referencing.

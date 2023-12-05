@@ -1,0 +1,22 @@
+{
+    "templates": [
+        {
+            "id": 1,
+            "name": "ビジネスプラン",
+            "description": "ビジネスプランのためのテンプレートです。",
+            "thumbnailUrl": "https://example.com/template1-thumbnail.jpg"
+        },
+        {
+            "id": 2,
+            "name": "マーケティング戦略",
+            "description": "マーケティング戦略のためのテンプレートです。",
+            "thumbnailUrl": "https://example.com/template2-thumbnail.jpg"
+        },
+        {
+            "id": 3,
+            "name": "プロジェクト提案",
+            "description": "プロジェクト提案のためのテンプレートです。",
+            "thumbnailUrl": "https://example.com/template3-thumbnail.jpg"
+        }
+    ]
+}

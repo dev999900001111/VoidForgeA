@@ -1,0 +1,159 @@
+<a routerLink="/top-menu" routerLinkActive="router-link-active"> top-menu </a>
+<a routerLink="../collaboration" routerLinkActive="router-link-active"> collaboration </a>
+<a routerLink="../dashboard" routerLinkActive="router-link-active"> dashboard </a>
+<a routerLink="../help-support" routerLinkActive="router-link-active"> help-support </a>
+<a routerLink="../project-creation-edit" routerLinkActive="router-link-active"> project-creation-edit </a>
+<a routerLink="../search-exploration" routerLinkActive="router-link-active"> search-exploration </a>
+<a routerLink="../user-settings-profile" routerLinkActive="router-link-active"> user-settings-profile </a>
+
+
+<div class="center-pane">
+  <section>
+    <h1>Create New Project</h1>
+    <div class="menu-tiles-container">
+      <!-- 画面ありのWebアプリ -->
+      <button class="menu-tile" routerLink="../project-creation-edit">
+        <div class="tile-content">Web App</div>
+      </button>
+      <!-- 画面ナシのオンラインアプリケーション -->
+      <button class="menu-tile">
+        <div class="tile-content">API</div>
+      </button>
+      <!-- バッチ -->
+      <button class="menu-tile">
+        <div class="tile-content">Batch</div>
+      </button>
+      <!-- モバイルアプリ -->
+      <button class="menu-tile">
+        <div class="tile-content">Mobile App</div>
+      </button>
+      <!-- ドキュメント -->
+      <button class="menu-tile">
+        <div class="tile-content">Documents</div>
+      </button>
+      <!-- 小説とか本とか -->
+      <button class="menu-tile">
+        <div class="tile-content">Books</div>
+      </button>
+      <!-- Add more menu tiles as needed -->
+    </div>
+  </section>
+
+  <mat-divider style="width: 100%;"></mat-divider>
+
+  <section class="dashboard-container">
+    <h1>Recent Projects</h1>
+
+    <mat-grid-list cols="3" rowHeight="200px" gutterSize="10px">
+      <mat-grid-tile *ngFor="let project of projects">
+        <mat-card class="project-card">
+          <mat-card-header class="card-header">
+            <mat-card-title>{{ project.name }}</mat-card-title>
+            <mat-card-subtitle>{{ project.description }}</mat-card-subtitle>
+          </mat-card-header>
+          <!-- <img mat-card-image *ngIf="project.thumbnailUrl" [src]="project.thumbnailUrl" alt="{{ project.name }}"> -->
+          <mat-card-content>
+            <p>{{ '最終更新日時：' + (project.updatedAt | date:'longDate') }}</p>
+          </mat-card-content>
+          <mat-card-actions>
+            <button mat-button (click)="select.emit(project)">{{ '編集' }}</button>
+            <button mat-button (click)="openConfirmationDialog(project.id)">{{ '削除' }}</button>
+            <button mat-button>{{ '共有' }}</button>
+          </mat-card-actions>
+        </mat-card>
+      </mat-grid-tile>
+    </mat-grid-list>
+
+    <!-- <button mat-fab color="primary" class="new-project-fab" (click)="navigateToProjectCreation()">
+        <mat-icon>add</mat-icon>
+      </button> -->
+  </section>
+</div>
+<!-- 
+**Notes:**
+- The `onLogout()` method should be implemented in the component TypeScript file to handle the logout event emitted by the `app-header`.
+- The `openConfirmationDialog(projectId)` method should be implemented to open the `ConfirmationDialog` with the appropriate message and handle the confirmation event.
+- The `navigateToProjectCreation()` method should be implemented to navigate the user to the `ProjectCreationEditComponent` with a new project context.
+- The `mat-grid-list` is set to have 3 columns with each row being 350px high. Adjust the `cols` and `rowHeight` as needed to fit the design requirements.
+- The `mat-fab` is styled with a class `new-project-fab` which should be defined in the component's CSS to position the button correctly on the screen.
+- The `mat-card-image` is conditionally included only if the `project.thumbnailUrl` is available.
+- The date format pipe `date:'longDate'` is used to format the `updatedAt` property of the project. Adjust the date format as needed for the locale.
+- The text is in Japanese as per the requirement. Adjust the text as needed for the correct terminology and language nuances. -->
+
+
+<style>
+  .menu-tiles-container {
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .menu-tile {
+    width: 30%;
+    height: 200px;
+    background-color: #333;
+    background-color: #424242;
+    border-radius: 10px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    color: #f2f2f2;
+    margin: 10px;
+    transition: all 0.3s ease-in-out;
+    border: none;
+  }
+
+  .menu-tile:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+  }
+
+  .tile-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+  }
+
+  section {
+    width: 100%;
+  }
+
+  .project-card {
+    width: 300px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .card-header {
+    height: 1px;
+    flex-grow: 1;
+  }
+
+  mat-divider {
+    width: 100%;
+    margin: 60px;
+  }
+
+  .center-pane {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 1200px;
+  }
+
+  .dashboard-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+</style>

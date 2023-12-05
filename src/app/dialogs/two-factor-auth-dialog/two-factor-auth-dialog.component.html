@@ -1,0 +1,21 @@
+<mat-dialog-content>
+  <h1 mat-dialog-title>二要素認証の設定</h1>
+  <div>
+    <p>二要素認証は、パスワードだけでなく、セキュリティを強化するためにもう一つの形式の認証を必要とします。通常は認証アプリによって生成されるコードです。</p>
+    <p>以下のQRコードをスキャンして、認証アプリにアカウントを追加し、二要素認証を設定してください。</p>
+    <div class="qr-code-container">
+      <img [src]="data.qrCodeUrl" alt="二要素認証のQRコード">
+    </div>
+    <mat-form-field>
+      <mat-label>認証コード</mat-label>
+      <input matInput placeholder="認証アプリからの6桁のコードを入力" #verificationCodeInput>
+    </mat-form-field>
+    <mat-error *ngIf="error">{{ error }}</mat-error>
+  </div>
+  <div mat-dialog-actions>
+    <button mat-button mat-dialog-close>キャンセル</button>
+    <button mat-button (click)="verifyCode(verificationCodeInput.value)">確認</button>
+  </div>
+</mat-dialog-content>
+
+Please note that the above HTML assumes that you have an Angular component with a property `data` that contains the `qrCodeUrl`, and a method `verifyCode` that takes the verification code as a parameter. Also, an `error` property is used to display error messages, which should be defined in your component's TypeScript file. The `#verificationCodeInput` is a template reference variable used to access the input value. Adjust the component's TypeScript logic accordingly to handle these interactions.

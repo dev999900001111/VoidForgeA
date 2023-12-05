@@ -1,0 +1,63 @@
+{
+    "projects": [
+        {
+            "id": 1,
+            "name": "プロジェクトA",
+            "description": "プロジェクトAの説明",
+            "ownerId": 123,
+            "templateId": 10,
+            "content": "プロジェクトAのコンテンツ",
+            "status": "ACTIVE",
+            "collaborators": [
+                {
+                    "id": 124,
+                    "name": "ユーザーA",
+                    "email": "usera@example.com",
+                    "role": "USER",
+                    "profilePictureUrl": "https://example.com/profiles/usera.jpg"
+                },
+                {
+                    "id": 125,
+                    "name": "ユーザーB",
+                    "email": "userb@example.com",
+                    "role": "ADMIN",
+                    "profilePictureUrl": "https://example.com/profiles/userb.jpg"
+                }
+            ],
+            "createdAt": "2023-04-01T09:00:00Z",
+            "updatedAt": "2023-04-02T09:00:00Z"
+        },
+        {
+            "id": 2,
+            "name": "プロジェクトB",
+            "description": "プロジェクトBの説明",
+            "ownerId": 126,
+            "templateId": 11,
+            "content": "プロジェクトBのコンテンツ",
+            "status": "ARCHIVED",
+            "collaborators": [
+                {
+                    "id": 127,
+                    "name": "ユーザーC",
+                    "email": "userc@example.com",
+                    "role": "GUEST",
+                    "profilePictureUrl": "https://example.com/profiles/userc.jpg"
+                }
+            ],
+            "createdAt": "2023-03-01T09:00:00Z",
+            "updatedAt": "2023-03-02T09:00:00Z"
+        },
+        {
+            "id": 3,
+            "name": "プロジェクトC",
+            "description": "プロジェクトCの説明",
+            "ownerId": 128,
+            "templateId": 12,
+            "content": "プロジェクトCのコンテンツ",
+            "status": "DELETED",
+            "collaborators": [],
+            "createdAt": "2023-02-01T09:00:00Z",
+            "updatedAt": "2023-02-02T09:00:00Z"
+        }
+    ]
+}

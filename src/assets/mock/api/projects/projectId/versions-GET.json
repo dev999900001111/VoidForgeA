@@ -1,0 +1,16 @@
+{
+    "versions": [
+        {
+            "id": 1,
+            "projectId": 1,
+            "versionNumber": 1,
+            "createdAt": "2022-01-01T10:00:00Z"
+        },
+        {
+            "id": 2,
+            "projectId": 1,
+            "versionNumber": 2,
+            "createdAt": "2022-01-02T10:00:00Z"
+        }
+    ]
+}

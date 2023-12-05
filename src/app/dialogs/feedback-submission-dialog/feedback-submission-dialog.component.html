@@ -1,0 +1,17 @@
+<mat-dialog-content>
+  <h2 mat-dialog-title>フィードバックの送信</h2>
+  <form>
+    <mat-form-field appearance="fill">
+      <mat-label>フィードバック</mat-label>
+      <textarea matInput placeholder="アプリに関するご意見をお聞かせください。" #feedbackInput></textarea>
+      <!-- <mat-error *ngIf="feedbackInput.invalid && feedbackInput.touched">フィードバックを入力してください。</mat-error> -->
+    </mat-form-field>
+  </form>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-button mat-dialog-close>{{ 'キャンセル' | translate }}</button>
+  <button mat-button [mat-dialog-close]="feedbackInput.value" [disabled]="!feedbackInput.value">{{ '送信' | translate
+    }}</button>
+</mat-dialog-actions>
+
+<!-- Please note that I've added a `translate` pipe for the button labels, assuming you have a translation service set up in your Angular application to handle i18n (internationalization). If you don't have such a service, you can remove the `| translate` part and directly write the Japanese text. -->

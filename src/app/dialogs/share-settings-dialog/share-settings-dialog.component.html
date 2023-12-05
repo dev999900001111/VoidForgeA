@@ -1,0 +1,31 @@
+<mat-dialog-content>
+  <h2 mat-dialog-title>共有設定</h2>
+  <mat-list>
+    <mat-list-item *ngFor="let setting of settings">
+      <div mat-line>{{ setting.userId | userName }}</div>
+      <div mat-line>
+        <mat-form-field>
+          <mat-label>権限</mat-label>
+          <mat-select [(value)]="setting.permissionLevel">
+            <mat-option *ngFor="let level of permissionLevels" [value]="level">
+              {{ level | permissionLevelTranslation }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+    </mat-list-item>
+  </mat-list>
+  <div mat-dialog-actions>
+    <button mat-button mat-dialog-close>{{ 'キャンセル' | translate }}</button>
+    <button mat-button (click)="update.emit(settings)">{{ '更新' | translate }}</button>
+  </div>
+</mat-dialog-content>
+
+<!-- **Notes:**
+- The `userName` and `permissionLevelTranslation` pipes are assumed to be implemented to translate user IDs to user names and permission levels to their Japanese equivalents, respectively.
+- The `translate` pipe is assumed to be implemented for translating static text into Japanese.
+- `permissionLevels` is assumed to be an array of available permission levels defined in the component's TypeScript file.
+- The `mat-dialog-title` and `mat-dialog-actions` are used as per Angular Material's dialog API to define the title and actions of the dialog.
+- The `mat-select` component is used to provide a dropdown menu for each collaborator's permission level.
+- The `update.emit(settings)` is used to emit the updated settings when the 'Update' button is clicked. The `@Output` name is not specified as per the prompt's instruction.
+- The `mat-dialog-close` attribute is used on the 'Cancel' button to close the dialog without saving changes. -->

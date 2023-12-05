@@ -1,0 +1,13 @@
+<mat-list role="list">
+  <h3 mat-subheader>プロジェクトのバージョン</h3>
+  <mat-list-item *ngFor="let version of versions" role="listitem">
+    <mat-icon mat-list-icon>history</mat-icon>
+    <div mat-line>バージョン {{ version.versionNumber }}</div>
+    <div mat-line>{{ version.createdAt | date:'longDate' }} ({{ version.createdAt | date:'shortTime'}})</div>
+    <button mat-icon-button (click)="revert.emit(version)" aria-label="バージョンに戻る">
+      <mat-icon>undo</mat-icon>
+    </button>
+  </mat-list-item>
+</mat-list>
+
+<!-- This HTML snippet for the `VersionControlComponent` uses Angular Material components to create a polished design. It includes a list of project versions, each with a history icon, version number, creation date, and a button to revert to that version. The button emits a `revert` event with the selected version as its payload. The date is formatted for Japanese locale using Angular's `date` pipe. -->

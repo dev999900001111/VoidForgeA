@@ -1,0 +1,29 @@
+{
+    "project": {
+        "id": 1,
+        "name": "プロジェクト1",
+        "description": "これはプロジェクト1の説明です。",
+        "ownerId": 1,
+        "templateId": 1,
+        "content": "プロジェクト1のコンテンツ",
+        "status": "ACTIVE",
+        "collaborators": [
+            {
+                "id": 2,
+                "name": "ユーザー2",
+                "email": "user2@example.com",
+                "role": "USER",
+                "profilePictureUrl": "https://example.com/user2.jpg"
+            },
+            {
+                "id": 3,
+                "name": "ユーザー3",
+                "email": "user3@example.com",
+                "role": "USER",
+                "profilePictureUrl": "https://example.com/user3.jpg"
+            }
+        ],
+        "createdAt": "2022-01-01T00:00:00Z",
+        "updatedAt": "2022-01-02T00:00:00Z"
+    }
+}

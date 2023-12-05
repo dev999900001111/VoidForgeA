@@ -1,0 +1,59 @@
+<div class="grid-container grid-2x1" style="width: 100%;" *ngIf="!isLoading">
+    <form class="grid-item" name="f" style="min-width: 45%;">
+        <h2>要件一覧</h2>
+
+        <div style="display: flex;">
+            <button mat-button color="primary" class="button"
+                (click)="editFeatures(!isSumEdit)">{{!isSumEdit?'編集':'プレビュー'}}</button>
+            <button mat-button color="primary" class="button" (click)="drilldown()">決定</button>
+        </div>
+
+        <div class="h-full">
+            <!-- <div *ngFor="let feature of featureList" markdown>{{feature}}</div> -->
+            <markdown *ngIf="!isSumEdit" #featuresElem>{{features}}</markdown>
+            <ng-container *ngIf="isSumEdit">
+                <button style="position: absolute;right: 0;bottom: 0;">save</button>
+                <textarea [style.width]="'100%'" [style.height]="textAreaSize.height+'px'"
+                    style="background-color: black;" class="w-full h-full" [(ngModel)]="features" name="features"
+                    class="text-area"></textarea>
+            </ng-container>
+        </div>
+    </form>
+    <div class="grid-item" *ngIf="chatResponse.text">
+        <h2>詳細化機能一覧</h2>
+
+        <div style="display: flex;">
+            <button mat-button color="primary" class="button"
+                (click)="isDetEdit=!isDetEdit">{{!isDetEdit?'編集':'プレビュー'}}</button>
+            <button mat-button color="primary" class="button" (click)="submit()">決定</button>
+        </div>
+
+        <markdown [data]="chatResponse.text" #detailList></markdown>
+    </div>
+</div>
+
+<style>
+    h2 {
+        background-color: #2f2f2f;
+        padding: 0.5rem;
+        text-align: center;
+    }
+
+    .grid-2x1 {
+        /* 2列のレイアウト */
+        grid-template-columns: 1fr 1fr;
+        /* アイテム間のギャップ */
+        gap: 10px;
+    }
+
+    .text-area {
+        color: white;
+        background-color: #3d3d3d;
+    }
+
+    .button {
+        width: 100%;
+        margin: 0.5rem 0;
+        margin-bottom: 1rem;
+    }
+</style>

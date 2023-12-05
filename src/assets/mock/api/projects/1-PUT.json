@@ -1,0 +1,29 @@
+{
+    "project": {
+        "id": 1,
+        "name": "プロジェクトアルファ更新",
+        "description": "マーケティングキャンペーンプロジェクトの更新",
+        "ownerId": 1,
+        "templateId": 2,
+        "content": "プロジェクトの内容が更新されました。",
+        "status": "ACTIVE",
+        "collaborators": [
+            {
+                "id": 2,
+                "name": "山田太郎",
+                "email": "taro.yamada@example.com",
+                "role": "USER",
+                "profilePictureUrl": "https://example.com/profiles/taro_updated.jpg"
+            },
+            {
+                "id": 6,
+                "name": "伊藤美咲",
+                "email": "misaki.ito@example.com",
+                "role": "GUEST",
+                "profilePictureUrl": "https://example.com/profiles/misaki.jpg"
+            }
+        ],
+        "createdAt": "2023-04-01T12:00:00Z",
+        "updatedAt": "2023-04-03T18:20:00Z"
+    }
+}

@@ -1,0 +1,50 @@
+<mat-grid-list cols="3" rowHeight="300px" gutterSize="10px" *ngIf="suggestions.length > 0; else noSuggestionsTemplate">
+  <mat-grid-tile *ngFor="let suggestion of suggestions" (click)="select.emit(suggestion)">
+    <figure class="suggestion-tile">
+      <img mat-card-image [src]="suggestion.data" alt="{{ suggestion.type | titlecase }}">
+      <figcaption>
+        <h3 class="suggestion-title">{{ suggestion.type | titlecase }}</h3>
+        <p class="suggestion-description">{{ 'プロジェクトID' }}: {{ suggestion.projectId }}</p>
+      </figcaption>
+    </figure>
+  </mat-grid-tile>
+</mat-grid-list>
+
+<ng-template #noSuggestionsTemplate>
+  <div class="no-suggestions">
+    <p>現在、おすすめのコンテンツはありません。後で新しいコンテンツをチェックしてください。</p>
+  </div>
+</ng-template>
+
+<ng-container *ngIf="error">
+  <div class="error-message">
+    <p>おすすめのコンテンツを読み込む際に問題が発生しました。後でもう一度お試しください。</p>
+  </div>
+</ng-container>
+
+<style>
+  .suggestion-tile {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  .suggestion-title {
+    margin-top: 10px;
+    font-size: 1.2em;
+    font-weight: bold;
+  }
+
+  .suggestion-description {
+    font-size: 0.9em;
+  }
+
+  .no-suggestions, .error-message {
+    text-align: center;
+    padding: 20px;
+  }
+</style>
+
+<!-- Please note that the above HTML assumes that the `suggestions` array and an `error` flag are provided by the component's TypeScript class. The `error` flag should be set to `true` if there is an error loading the suggestions. The `select.emit(suggestion)` is used to emit the selected suggestion object when a grid tile is clicked. The `*ngIf` directive is used to conditionally render the grid list or the appropriate message template. The `#noSuggestionsTemplate` is a template reference variable for the case when there are no suggestions to display. The text is in Japanese as per the requirement. -->

@@ -1,0 +1,36 @@
+<mat-card>
+  <mat-card-content>
+    <form #feedbackForm="ngForm" (ngSubmit)="submit.emit(feedbackForm.value)">
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>フィードバック</mat-label>
+        <textarea matInput
+                  placeholder="ご意見をお聞かせください"
+                  name="feedbackContent"
+                  required
+                  minlength="10"
+                  #feedbackContent="ngModel"
+                  [(ngModel)]="feedback.content"></textarea>
+        <mat-error *ngIf="feedbackContent.invalid && feedbackContent.touched">
+          <span *ngIf="feedbackContent.errors?.['required']">フィードバックを入力してください。</span>
+          <span *ngIf="feedbackContent.errors?.['minlength']">フィードバックは最低10文字必要です。</span>
+        </mat-error>
+      </mat-form-field>
+      <div class="feedback-submit-button">
+        <button mat-raised-button color="primary" type="submit" [disabled]="feedbackForm.invalid">送信</button>
+      </div>
+    </form>
+  </mat-card-content>
+</mat-card>
+
+**Notes:**
+- The `mat-card` component is used to give the form a card-like appearance.
+- The `mat-form-field` with `appearance="outline"` creates a text area with an outlined style.
+- The `mat-label` is used to provide a label for the text area.
+- The `textarea` is used for multiline text input, with `matInput` directive to style it according to Material Design.
+- The `required` attribute and `minlength` validator are used to ensure the feedback is not empty and meets the minimum length requirement.
+- The `mat-error` elements display validation messages when the input is invalid and touched.
+- The `button` with `mat-raised-button` directive is styled as a Material Design raised button and is disabled when the form is invalid.
+- The `full-width` and `feedback-submit-button` classes are assumed to be defined in the component's CSS to handle the full width of the form field and styling of the submit button, respectively. These classes are not provided in the HTML snippet but should be defined in the corresponding stylesheet.
+- The form uses Angular's template-driven forms approach, with `ngModel` to bind the feedback content and `ngSubmit` to handle the form submission.
+- The `submit.emit` method is called on form submission, emitting the feedback content to the parent component.
+- The text is in Japanese as per the requirement.

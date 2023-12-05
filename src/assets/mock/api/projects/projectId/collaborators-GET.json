@@ -1,0 +1,25 @@
+{
+    "collaborators": [
+        {
+            "id": 1,
+            "name": "山田太郎",
+            "email": "yamada@example.com",
+            "role": "ADMIN",
+            "profilePictureUrl": "https://example.com/profiles/yamada.jpg"
+        },
+        {
+            "id": 2,
+            "name": "佐藤花子",
+            "email": "satoh@example.com",
+            "role": "USER",
+            "profilePictureUrl": "https://example.com/profiles/satoh.jpg"
+        },
+        {
+            "id": 3,
+            "name": "鈴木次郎",
+            "email": "suzuki@example.com",
+            "role": "GUEST",
+            "profilePictureUrl": "https://example.com/profiles/suzuki.jpg"
+        }
+    ]
+}

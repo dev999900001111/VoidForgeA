@@ -1,0 +1,24 @@
+<mat-form-field appearance="fill">
+  <mat-label>テンプレートを選択</mat-label>
+  <mat-select [(value)]="selectedTemplate" (selectionChange)="select.emit($event.value)">
+    <mat-option *ngFor="let template of templates" [value]="template">
+      {{ template.name }}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
+
+<div *ngIf="selectedTemplate" class="template-preview">
+  <img [src]="selectedTemplate.thumbnailUrl" alt="テンプレートのプレビュー" class="template-thumbnail">
+  <p class="template-description">{{ selectedTemplate.description }}</p>
+</div>
+
+<!-- **Notes:**
+- The `mat-form-field` and `mat-select` components from Angular Material are used to create the dropdown menu.
+- The `mat-label` is set to "テンプレートを選択", which is Japanese for "Select Template".
+- The `mat-select` binds to a property `selectedTemplate` which should be defined in the component's TypeScript file. The `selectionChange` event is used to emit the selected template to the parent component.
+- The `*ngFor` directive is used to iterate over the `templates` array provided by the `@Input` and create `mat-option` elements for each template.
+- A `div` element with a class `template-preview` is conditionally displayed if a template is selected. It shows the thumbnail and description of the selected template.
+- The `img` tag uses the `thumbnailUrl` from the selected template for the `src` attribute and includes a descriptive `alt` attribute.
+- The `p` tag with the class `template-description` displays the description of the selected template.
+
+Please ensure that the `selectedTemplate`, `templates`, and `select` are properly defined and handled in the component's TypeScript file to match this template. Additionally, appropriate CSS should be applied to match the desired design aesthetics. -->

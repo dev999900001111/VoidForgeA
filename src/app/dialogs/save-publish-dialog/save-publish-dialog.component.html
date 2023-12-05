@@ -1,0 +1,13 @@
+<mat-dialog-content class="mat-typography">
+  <h1 mat-dialog-title>プロジェクトの保存または公開</h1>
+  <div>
+    <p>プロジェクトを保存すると、現在の状態が保持されます。公開すると、プロジェクトの共有設定に基づいて他のユーザーや公開に利用できるようになります。</p>
+  </div>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-button mat-dialog-close>キャンセル</button>
+  <button mat-button color="primary" (click)="save.emit()">保存</button>
+  <button mat-button color="accent" (click)="publish.emit()">公開</button>
+</mat-dialog-actions>
+
+<!-- This HTML snippet for the `SavePublishDialog` component uses Angular Material components to create a polished design. The dialog provides a title and description in Japanese, and three buttons for the actions: cancel, save, and publish. The save and publish buttons use event emitters to notify the parent component of the user's choice. The cancel button simply closes the dialog without any action. -->

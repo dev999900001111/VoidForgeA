@@ -1,0 +1,18 @@
+{
+    "comments": [
+        {
+            "id": 1,
+            "authorId": 1,
+            "projectId": 1,
+            "content": "コメント1",
+            "createdAt": "2022-01-01T10:00:00Z"
+        },
+        {
+            "id": 2,
+            "authorId": 2,
+            "projectId": 1,
+            "content": "コメント2",
+            "createdAt": "2022-01-02T10:00:00Z"
+        }
+    ]
+}

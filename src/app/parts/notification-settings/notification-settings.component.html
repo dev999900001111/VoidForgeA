@@ -1,0 +1,30 @@
+<!-- notification-settings.component.html -->
+
+<div class="notification-settings">
+  <h2>通知設定</h2>
+  <mat-divider></mat-divider>
+  <form>
+    <div *ngFor="let setting of notifications; let i = index" class="notification-setting">
+      <mat-slide-toggle
+        [checked]="setting.enabled"
+        (change)="update.emit({userId: setting.userId, type: setting.type, enabled: $event.checked})">
+        {{ getNotificationTypeLabel(setting.type) }}
+      </mat-slide-toggle>
+    </div>
+  </form>
+</div>
+<!-- 
+
+**Explanation:**
+
+- The `<div>` with the class `notification-settings` is the container for the notification settings.
+- `<h2>` is used for the title of the settings section, which is in Japanese: "通知設定".
+- `<mat-divider>` is used to separate the title from the list of settings.
+- A `<form>` tag is used to contain the list of settings, although there is no traditional form submission.
+- `*ngFor` directive is used to iterate over the `notifications` input array.
+- `mat-slide-toggle` is an Angular Material component that acts as a toggle switch for each notification setting.
+- `[checked]` property binding sets the toggle state based on the `enabled` property of each `NotificationSetting`.
+- `(change)` event binding is used to emit the updated setting to the parent component when the toggle is changed. The `update.emit()` method is called with an object containing the `userId`, `type`, and new `enabled` state.
+- `getNotificationTypeLabel(setting.type)` is a hypothetical method that would return the display label for each notification type in Japanese. This method would need to be implemented in the component's TypeScript file to handle the translation of `NotificationType` enum values to user-friendly text.
+
+**Note:** The `update.emit()` method is used instead of a specific name for the `@Output` as per the instruction not to use a name specified for `@Output`. The `getNotificationTypeLabel` method is assumed to be part of the component's class, which would be responsible for translating the `NotificationType` to a user-friendly string in Japanese. -->

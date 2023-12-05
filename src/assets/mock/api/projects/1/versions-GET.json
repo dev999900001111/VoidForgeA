@@ -1,0 +1,22 @@
+{
+    "versions": [
+        {
+            "id": 1,
+            "projectId": 1,
+            "versionNumber": 1,
+            "createdAt": "2023-03-01T10:00:00Z"
+        },
+        {
+            "id": 2,
+            "projectId": 1,
+            "versionNumber": 2,
+            "createdAt": "2023-03-15T11:15:00Z"
+        },
+        {
+            "id": 3,
+            "projectId": 1,
+            "versionNumber": 3,
+            "createdAt": "2023-03-30T14:45:00Z"
+        }
+    ]
+}

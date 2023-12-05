@@ -1,0 +1,22 @@
+```plaintext
+Variables:
+- notifications, Array<NotificationSetting>, An array of objects representing the user's notification settings, where each object contains properties like `userId`, `type`, and `enabled`.
+
+Constants:
+- None specified directly in the template, but if mat-table column names are considered constants, they would typically be defined in the TypeScript file as an array of strings representing the column identifiers.
+
+ViewChild:
+- None specified in the template.
+
+Functions:
+- getNotificationTypeLabel, (type: NotificationType) => string, A method that takes a notification type and returns the corresponding user-friendly label in Japanese.
+
+Outputs:
+- update, EventEmitter<{userId: number, type: NotificationType, enabled: boolean}>, An Angular `@Output` that emits an event when a notification setting is changed, sending an object with the `userId`, `type`, and new `enabled` state.
+
+Types:
+- NotificationSetting, {userId: number, type: NotificationType, enabled: boolean}, A TypeScript interface or type representing the structure of a notification setting.
+- NotificationType, Enum, An enumeration that defines the possible types of notifications.
+
+Note: The actual names and types of the variables, constants, ViewChild, functions, and outputs would be defined in the TypeScript file associated with this component. The names provided here are based on the context given in the HTML template and common Angular conventions.
+```

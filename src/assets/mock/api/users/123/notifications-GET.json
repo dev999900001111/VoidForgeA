@@ -1,0 +1,19 @@
+{
+    "settings": [
+        {
+            "userId": 123,
+            "type": "EMAIL",
+            "enabled": true
+        },
+        {
+            "userId": 123,
+            "type": "SMS",
+            "enabled": false
+        },
+        {
+            "userId": 123,
+            "type": "PUSH_NOTIFICATION",
+            "enabled": true
+        }
+    ]
+}

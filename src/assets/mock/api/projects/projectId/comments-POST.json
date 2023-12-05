@@ -1,0 +1,9 @@
+{
+    "comment": {
+        "id": 3,
+        "authorId": 1,
+        "projectId": 1,
+        "content": "新しいコメント",
+        "createdAt": "2022-01-03T10:00:00Z"
+    }
+}

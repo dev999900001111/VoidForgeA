@@ -1,0 +1,25 @@
+Based on the provided Angular template, here is a list of the variables, constants, ViewChild, and functions that would be needed in the corresponding TypeScript component file. Please note that the actual implementation details such as the types of the variables and the logic within the functions would depend on the broader context of the application.
+
+### Variables:
+1. `project`, type: `Project | undefined`, description: An object that holds the details of the project. It may be undefined if a new project is being created.
+2. `save`, type: `EventEmitter<Project>`, description: An Angular `@Output` event emitter that emits the project object when the save button is clicked.
+
+### Constants:
+1. `PROJECT_CREATION_TITLE`, type: `string`, description: A constant for the title displayed when creating a new project, which would be `'新しいプロジェクト'`.
+2. `PROJECT_EDIT_TITLE`, type: `string`, description: A constant for the title displayed when editing an existing project, which would be `'プロジェクトを編集'`.
+
+### ViewChild:
+1. `savePublishDialog`, type: `TemplateRef<any>`, description: A reference to the `ng-template` that contains the `SavePublishDialog` component.
+
+### Functions:
+1. `openSavePublishDialog`, return type: `void`, description: A function that opens the save/publish dialog when the publish button is clicked.
+2. `publishProject`, return type: `void`, description: A function that handles the logic for publishing the project when the publish option is selected from the dialog.
+
+### Mat-Table Column Names (Constants):
+Since there is no `mat-table` in the provided HTML snippet, I cannot provide the column names. However, if there were a `mat-table`, each column name would be a constant, typically a string that identifies the column in the table configuration.
+
+For example, if there were a table for displaying project details, you might have:
+1. `COLUMN_PROJECT_NAME`, type: `string`, description: The column name for the project name.
+2. `COLUMN_PROJECT_DESCRIPTION`, type: `string`, description: The column name for the project description.
+
+Please note that the actual names and types of the constants for the column names would depend on the specific fields you want to display in your `mat-table`.

@@ -1,0 +1,46 @@
+<mat-card>
+  <mat-card-content>
+    <form #accountInfoForm="ngForm" (ngSubmit)="onSubmit(accountInfoForm)">
+      <mat-form-field appearance="fill">
+        <mat-label>フルネーム</mat-label>
+        <input matInput placeholder="フルネームを入力してください" required [(ngModel)]="user.name" name="fullName">
+        <mat-error *ngIf="accountInfoForm.controls['fullName'].invalid && accountInfoForm.controls['fullName'].touched">
+          フルネームを入力してください。
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>メールアドレス</mat-label>
+        <input matInput placeholder="メールアドレスを入力してください" required email [(ngModel)]="user.email" name="email">
+        <mat-error *ngIf="accountInfoForm.controls['email'].invalid && accountInfoForm.controls['email'].touched">
+          有効なメールアドレスを入力してください。
+        </mat-error>
+      </mat-form-field>
+
+      <div class="profile-picture">
+        <mat-form-field appearance="fill">
+          <mat-label>プロフィール写真</mat-label>
+          <input type="file" accept="image/*" (change)="onProfilePictureChange($event)" #profilePictureInput>
+        </mat-form-field>
+        <!-- <img *ngIf="user?.profilePictureUrl" [src]="user.profilePictureUrl" alt="プロフィール写真"
+          class="profile-picture-preview"> -->
+      </div>
+
+      <button mat-raised-button color="primary" type="submit" [disabled]="accountInfoForm.invalid">変更を保存</button>
+    </form>
+  </mat-card-content>
+</mat-card>
+
+<!-- **Notes:**
+- The form uses Angular's template-driven forms approach, with `ngModel` binding the user's properties to the form inputs.
+- The `mat-form-field` components are used to create material design form fields with full appearance.
+- The `mat-label` elements define the labels for the input fields.
+- The `matInput` directive is used to style the input elements according to Material Design.
+- The `mat-error` elements display error messages when the form controls are touched and invalid.
+- The profile picture section includes a file input for image files and an image tag to preview the current profile picture.
+- The `onSubmit` method should be defined in the component's TypeScript file to handle form submission.
+- The `onProfilePictureChange` method should be defined to handle changes to the profile picture input.
+- The `mat-raised-button` is used for the submit button, with a primary color.
+- The button is disabled if the form is invalid, preventing submission of invalid data.
+- The HTML assumes that the component's TypeScript file has the necessary properties (`user`) and methods (`onSubmit`, `onProfilePictureChange`) defined.
+- The text is in Japanese as per the requirement. -->

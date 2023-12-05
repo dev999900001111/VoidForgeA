@@ -1,0 +1,337 @@
+{
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "version": 1,
+  "newProjectRoot": "projects",
+  "projects": {
+    "void-forge-a": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss",
+          "standalone": true
+        },
+        "@schematics/angular:directive": {
+          "standalone": true
+        },
+        "@schematics/angular:pipe": {
+          "standalone": true
+        }
+      },
+      "root": "",
+      "sourceRoot": "src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/void-forge-a",
+            "index": "src/index.html",
+            "main": "src/main.ts",
+            "polyfills": [
+              "zone.js"
+            ],
+            "tsConfig": "tsconfig.app.json",
+            "inlineStyleLanguage": "scss",
+            "assets": [
+              "src/favicon.ico",
+              "src/assets"
+            ],
+            "styles": [
+              "@angular/material/prebuilt-themes/pink-bluegrey.css",
+              "node_modules/prismjs/themes/prism-okaidia.css",
+              "node_modules/prismjs/plugins/line-highlight/prism-line-highlight.css",
+              "node_modules/prismjs/plugins/command-line/prism-command-line.css",
+              "node_modules/katex/dist/katex.min.css",
+              "src/styles.scss"
+            ],
+            "scripts": [
+              "node_modules/prismjs/prism.js",
+              "node_modules/prismjs/components/prism-antlr4.min.js",
+              "node_modules/prismjs/components/prism-apacheconf.min.js",
+              "node_modules/prismjs/components/prism-apex.min.js",
+              "node_modules/prismjs/components/prism-aspnet.min.js",
+              "node_modules/prismjs/components/prism-awk.min.js",
+              "node_modules/prismjs/components/prism-bash.min.js",
+              "node_modules/prismjs/components/prism-basic.min.js",
+              "node_modules/prismjs/components/prism-c.min.js",
+              "node_modules/prismjs/components/prism-cmake.min.js",
+              "node_modules/prismjs/components/prism-cobol.min.js",
+              "node_modules/prismjs/components/prism-coffeescript.min.js",
+              "node_modules/prismjs/components/prism-cpp.min.js",
+              "node_modules/prismjs/components/prism-csharp.min.js",
+              "node_modules/prismjs/components/prism-cshtml.min.js",
+              "node_modules/prismjs/components/prism-csp.min.js",
+              "node_modules/prismjs/components/prism-css-extras.min.js",
+              "node_modules/prismjs/components/prism-css.min.js",
+              "node_modules/prismjs/components/prism-csv.min.js",
+              "node_modules/prismjs/components/prism-dart.min.js",
+              "node_modules/prismjs/components/prism-diff.min.js",
+              "node_modules/prismjs/components/prism-docker.min.js",
+              "node_modules/prismjs/components/prism-dot.min.js",
+              "node_modules/prismjs/components/prism-firestore-security-rules.min.js",
+              "node_modules/prismjs/components/prism-fortran.min.js",
+              "node_modules/prismjs/components/prism-git.min.js",
+              "node_modules/prismjs/components/prism-go-module.min.js",
+              "node_modules/prismjs/components/prism-go.min.js",
+              "node_modules/prismjs/components/prism-graphql.min.js",
+              "node_modules/prismjs/components/prism-groovy.min.js",
+              "node_modules/prismjs/components/prism-haskell.min.js",
+              "node_modules/prismjs/components/prism-http.min.js",
+              "node_modules/prismjs/components/prism-ini.min.js",
+              "node_modules/prismjs/components/prism-java.min.js",
+              "node_modules/prismjs/components/prism-javascript.min.js",
+              "node_modules/prismjs/components/prism-javastacktrace.min.js",
+              "node_modules/prismjs/components/prism-jq.min.js",
+              "node_modules/prismjs/components/prism-js-extras.min.js",
+              "node_modules/prismjs/components/prism-js-templates.min.js",
+              "node_modules/prismjs/components/prism-json.min.js",
+              "node_modules/prismjs/components/prism-json5.min.js",
+              "node_modules/prismjs/components/prism-jsonp.min.js",
+              "node_modules/prismjs/components/prism-jsstacktrace.min.js",
+              "node_modules/prismjs/components/prism-jsx.min.js",
+              "node_modules/prismjs/components/prism-julia.min.js",
+              "node_modules/prismjs/components/prism-kotlin.min.js",
+              "node_modules/prismjs/components/prism-latex.min.js",
+              "node_modules/prismjs/components/prism-less.min.js",
+              "node_modules/prismjs/components/prism-lisp.min.js",
+              "node_modules/prismjs/components/prism-log.min.js",
+              "node_modules/prismjs/components/prism-lua.min.js",
+              "node_modules/prismjs/components/prism-makefile.min.js",
+              "node_modules/prismjs/components/prism-markdown.min.js",
+              "node_modules/prismjs/components/prism-markup-templating.min.js",
+              "node_modules/prismjs/components/prism-markup.min.js",
+              "node_modules/prismjs/components/prism-matlab.min.js",
+              "node_modules/prismjs/components/prism-mermaid.min.js",
+              "node_modules/prismjs/components/prism-mongodb.min.js",
+              "node_modules/prismjs/components/prism-nginx.min.js",
+              "node_modules/prismjs/components/prism-objectivec.min.js",
+              "node_modules/prismjs/components/prism-pascal.min.js",
+              "node_modules/prismjs/components/prism-perl.min.js",
+              "node_modules/prismjs/components/prism-php-extras.min.js",
+              "node_modules/prismjs/components/prism-php.min.js",
+              "node_modules/prismjs/components/prism-powerquery.min.js",
+              "node_modules/prismjs/components/prism-powershell.min.js",
+              "node_modules/prismjs/components/prism-prolog.min.js",
+              "node_modules/prismjs/components/prism-protobuf.min.js",
+              "node_modules/prismjs/components/prism-python.min.js",
+              "node_modules/prismjs/components/prism-q.min.js",
+              "node_modules/prismjs/components/prism-r.min.js",
+              "node_modules/prismjs/components/prism-regex.min.js",
+              "node_modules/prismjs/components/prism-ruby.min.js",
+              "node_modules/prismjs/components/prism-rust.min.js",
+              "node_modules/prismjs/components/prism-sas.min.js",
+              "node_modules/prismjs/components/prism-sass.min.js",
+              "node_modules/prismjs/components/prism-scala.min.js",
+              "node_modules/prismjs/components/prism-scheme.min.js",
+              "node_modules/prismjs/components/prism-scss.min.js",
+              "node_modules/prismjs/components/prism-shell-session.min.js",
+              "node_modules/prismjs/components/prism-splunk-spl.min.js",
+              "node_modules/prismjs/components/prism-sql.min.js",
+              "node_modules/prismjs/components/prism-stylus.min.js",
+              "node_modules/prismjs/components/prism-swift.min.js",
+              "node_modules/prismjs/components/prism-tcl.min.js",
+              "node_modules/prismjs/components/prism-toml.min.js",
+              "node_modules/prismjs/components/prism-tsx.min.js",
+              "node_modules/prismjs/components/prism-turtle.min.js",
+              "node_modules/prismjs/components/prism-typescript.min.js",
+              "node_modules/prismjs/components/prism-typoscript.min.js",
+              "node_modules/prismjs/components/prism-vim.min.js",
+              "node_modules/prismjs/components/prism-visual-basic.min.js",
+              "node_modules/prismjs/components/prism-wasm.min.js",
+              "node_modules/prismjs/components/prism-wiki.min.js",
+              "node_modules/prismjs/components/prism-wolfram.min.js",
+              "node_modules/prismjs/components/prism-yaml.min.js",
+              "node_modules/prismjs/components/prism-csharp.min.js",
+              "node_modules/prismjs/components/prism-css.min.js",
+              "node_modules/prismjs/plugins/line-highlight/prism-line-highlight.js",
+              "node_modules/prismjs/plugins/command-line/prism-command-line.js",
+              "node_modules/emoji-toolkit/lib/js/joypixels.min.js",
+              "node_modules/katex/dist/katex.min.js",
+              "node_modules/katex/dist/contrib/auto-render.min.js",
+              "node_modules/mermaid/dist/mermaid.min.js",
+              "node_modules/clipboard/dist/clipboard.min.js"
+            ]
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kb",
+                  "maximumError": "1mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true,
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.development.ts"
+                }
+              ]
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "configurations": {
+            "production": {
+              "buildTarget": "void-forge-a:build:production"
+            },
+            "development": {
+              "buildTarget": "void-forge-a:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "buildTarget": "void-forge-a:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ],
+            "tsConfig": "tsconfig.spec.json",
+            "inlineStyleLanguage": "scss",
+            "assets": [
+              "src/favicon.ico",
+              "src/assets"
+            ],
+            "styles": [
+              "@angular/material/prebuilt-themes/pink-bluegrey.css",
+              "node_modules/prismjs/themes/prism-okaidia.css",
+              "node_modules/prismjs/plugins/line-highlight/prism-line-highlight.css",
+              "node_modules/prismjs/plugins/command-line/prism-command-line.css",
+              "node_modules/katex/dist/katex.min.css",
+              "src/styles.scss"
+            ],
+            "scripts": [
+              "node_modules/prismjs/prism.js",
+              "node_modules/prismjs/components/prism-antlr4.min.js",
+              "node_modules/prismjs/components/prism-apacheconf.min.js",
+              "node_modules/prismjs/components/prism-apex.min.js",
+              "node_modules/prismjs/components/prism-aspnet.min.js",
+              "node_modules/prismjs/components/prism-awk.min.js",
+              "node_modules/prismjs/components/prism-bash.min.js",
+              "node_modules/prismjs/components/prism-basic.min.js",
+              "node_modules/prismjs/components/prism-c.min.js",
+              "node_modules/prismjs/components/prism-cmake.min.js",
+              "node_modules/prismjs/components/prism-cobol.min.js",
+              "node_modules/prismjs/components/prism-coffeescript.min.js",
+              "node_modules/prismjs/components/prism-cpp.min.js",
+              "node_modules/prismjs/components/prism-csharp.min.js",
+              "node_modules/prismjs/components/prism-cshtml.min.js",
+              "node_modules/prismjs/components/prism-csp.min.js",
+              "node_modules/prismjs/components/prism-css-extras.min.js",
+              "node_modules/prismjs/components/prism-css.min.js",
+              "node_modules/prismjs/components/prism-csv.min.js",
+              "node_modules/prismjs/components/prism-dart.min.js",
+              "node_modules/prismjs/components/prism-diff.min.js",
+              "node_modules/prismjs/components/prism-docker.min.js",
+              "node_modules/prismjs/components/prism-dot.min.js",
+              "node_modules/prismjs/components/prism-firestore-security-rules.min.js",
+              "node_modules/prismjs/components/prism-fortran.min.js",
+              "node_modules/prismjs/components/prism-git.min.js",
+              "node_modules/prismjs/components/prism-go-module.min.js",
+              "node_modules/prismjs/components/prism-go.min.js",
+              "node_modules/prismjs/components/prism-graphql.min.js",
+              "node_modules/prismjs/components/prism-groovy.min.js",
+              "node_modules/prismjs/components/prism-haskell.min.js",
+              "node_modules/prismjs/components/prism-http.min.js",
+              "node_modules/prismjs/components/prism-ini.min.js",
+              "node_modules/prismjs/components/prism-java.min.js",
+              "node_modules/prismjs/components/prism-javascript.min.js",
+              "node_modules/prismjs/components/prism-javastacktrace.min.js",
+              "node_modules/prismjs/components/prism-jq.min.js",
+              "node_modules/prismjs/components/prism-js-extras.min.js",
+              "node_modules/prismjs/components/prism-js-templates.min.js",
+              "node_modules/prismjs/components/prism-json.min.js",
+              "node_modules/prismjs/components/prism-json5.min.js",
+              "node_modules/prismjs/components/prism-jsonp.min.js",
+              "node_modules/prismjs/components/prism-jsstacktrace.min.js",
+              "node_modules/prismjs/components/prism-jsx.min.js",
+              "node_modules/prismjs/components/prism-julia.min.js",
+              "node_modules/prismjs/components/prism-kotlin.min.js",
+              "node_modules/prismjs/components/prism-latex.min.js",
+              "node_modules/prismjs/components/prism-less.min.js",
+              "node_modules/prismjs/components/prism-lisp.min.js",
+              "node_modules/prismjs/components/prism-log.min.js",
+              "node_modules/prismjs/components/prism-lua.min.js",
+              "node_modules/prismjs/components/prism-makefile.min.js",
+              "node_modules/prismjs/components/prism-markdown.min.js",
+              "node_modules/prismjs/components/prism-markup-templating.min.js",
+              "node_modules/prismjs/components/prism-markup.min.js",
+              "node_modules/prismjs/components/prism-matlab.min.js",
+              "node_modules/prismjs/components/prism-mermaid.min.js",
+              "node_modules/prismjs/components/prism-mongodb.min.js",
+              "node_modules/prismjs/components/prism-nginx.min.js",
+              "node_modules/prismjs/components/prism-objectivec.min.js",
+              "node_modules/prismjs/components/prism-pascal.min.js",
+              "node_modules/prismjs/components/prism-perl.min.js",
+              "node_modules/prismjs/components/prism-php-extras.min.js",
+              "node_modules/prismjs/components/prism-php.min.js",
+              "node_modules/prismjs/components/prism-powerquery.min.js",
+              "node_modules/prismjs/components/prism-powershell.min.js",
+              "node_modules/prismjs/components/prism-prolog.min.js",
+              "node_modules/prismjs/components/prism-protobuf.min.js",
+              "node_modules/prismjs/components/prism-python.min.js",
+              "node_modules/prismjs/components/prism-q.min.js",
+              "node_modules/prismjs/components/prism-r.min.js",
+              "node_modules/prismjs/components/prism-regex.min.js",
+              "node_modules/prismjs/components/prism-ruby.min.js",
+              "node_modules/prismjs/components/prism-rust.min.js",
+              "node_modules/prismjs/components/prism-sas.min.js",
+              "node_modules/prismjs/components/prism-sass.min.js",
+              "node_modules/prismjs/components/prism-scala.min.js",
+              "node_modules/prismjs/components/prism-scheme.min.js",
+              "node_modules/prismjs/components/prism-scss.min.js",
+              "node_modules/prismjs/components/prism-shell-session.min.js",
+              "node_modules/prismjs/components/prism-splunk-spl.min.js",
+              "node_modules/prismjs/components/prism-sql.min.js",
+              "node_modules/prismjs/components/prism-stylus.min.js",
+              "node_modules/prismjs/components/prism-swift.min.js",
+              "node_modules/prismjs/components/prism-tcl.min.js",
+              "node_modules/prismjs/components/prism-toml.min.js",
+              "node_modules/prismjs/components/prism-tsx.min.js",
+              "node_modules/prismjs/components/prism-turtle.min.js",
+              "node_modules/prismjs/components/prism-typescript.min.js",
+              "node_modules/prismjs/components/prism-typoscript.min.js",
+              "node_modules/prismjs/components/prism-vim.min.js",
+              "node_modules/prismjs/components/prism-visual-basic.min.js",
+              "node_modules/prismjs/components/prism-wasm.min.js",
+              "node_modules/prismjs/components/prism-wiki.min.js",
+              "node_modules/prismjs/components/prism-wolfram.min.js",
+              "node_modules/prismjs/components/prism-yaml.min.js",
+              "node_modules/prismjs/plugins/line-highlight/prism-line-highlight.js",
+              "node_modules/prismjs/plugins/command-line/prism-command-line.js",
+              "node_modules/emoji-toolkit/lib/js/joypixels.min.js",
+              "node_modules/katex/dist/katex.min.js",
+              "node_modules/katex/dist/contrib/auto-render.min.js",
+              "node_modules/mermaid/dist/mermaid.min.js",
+              "node_modules/clipboard/dist/clipboard.min.js"
+            ]
+          }
+        }
+      }
+    }
+  }
+}

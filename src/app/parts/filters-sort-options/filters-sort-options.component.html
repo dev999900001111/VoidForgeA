@@ -1,0 +1,46 @@
+<mat-form-field appearance="fill">
+  <mat-label>カテゴリ</mat-label>
+  <mat-select [(value)]="selectedCategory" (selectionChange)="onUpdate({type: 'CATEGORY', value: $event.value})">
+    <mat-option *ngFor="let category of categories" [value]="category.value">
+      {{ category.viewValue }}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
+
+<mat-form-field appearance="fill">
+  <mat-label>日付</mat-label>
+  <mat-select [(value)]="selectedDate" (selectionChange)="onUpdate({type: 'DATE', value: $event.value})">
+    <mat-option *ngFor="let date of dates" [value]="date.value">
+      {{ date.viewValue }}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
+
+<mat-form-field appearance="fill">
+  <mat-label>ステータス</mat-label>
+  <mat-select [(value)]="selectedStatus" (selectionChange)="onUpdate({type: 'STATUS', value: $event.value})">
+    <mat-option *ngFor="let status of statuses" [value]="status.value">
+      {{ status.viewValue }}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
+
+<mat-form-field appearance="fill">
+  <mat-label>並び替え</mat-label>
+  <mat-select [(value)]="selectedSort" (selectionChange)="onUpdate({type: 'SORT', value: $event.value})">
+    <mat-option *ngFor="let sort of sorts" [value]="sort.value">
+      {{ sort.viewValue }}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
+
+<!-- **Notes:**
+- The `mat-form-field` and `mat-select` components from Angular Material are used to create the dropdown menus.
+- The `[(value)]` directive is used for two-way binding of the selected option to a component property (e.g., `selectedCategory`, `selectedDate`, etc.).
+- The `(selectionChange)` event is used to emit the selected filter value to the parent component when a selection is made.
+- The `*ngFor` directive is used to iterate over the arrays of categories, dates, statuses, and sorts to populate the dropdown options.
+- The `update.emit()` method is called with an object containing the filter type and value when a selection is made.
+- The placeholders for the arrays `categories`, `dates`, `statuses`, and `sorts` are used, assuming these will be provided by the component's TypeScript class.
+- The labels and option texts are in Japanese as per the requirement.
+- The `mat-label` is used to provide a label for each dropdown, which is also in Japanese.
+- The `appearance="fill"` attribute is used to give the dropdowns a filled style, which is a part of Angular Material's design customization options. -->

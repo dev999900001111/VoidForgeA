@@ -1,0 +1,28 @@
+{
+    "content": [
+        {
+            "id": 1,
+            "projectId": 101,
+            "type": "TEXT",
+            "data": "これはプロジェクトのテキストコンテンツです。"
+        },
+        {
+            "id": 2,
+            "projectId": 102,
+            "type": "IMAGE",
+            "data": "https://example.com/image.jpg"
+        },
+        {
+            "id": 3,
+            "projectId": 103,
+            "type": "VIDEO",
+            "data": "https://example.com/video.mp4"
+        },
+        {
+            "id": 4,
+            "projectId": 104,
+            "type": "AUDIO",
+            "data": "https://example.com/audio.mp3"
+        }
+    ]
+}

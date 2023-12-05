@@ -1,0 +1,30 @@
+<mat-card>
+  <mat-card-title>共有設定</mat-card-title>
+  <mat-card-content>
+    <div *ngFor="let permission of permissions; let i = index">
+      <mat-list-item>
+        <div mat-line>{{ permission.userId | userName }}</div>
+        <div mat-line>{{ permission.permissionLevel | permissionLevelTranslation }}</div>
+        <mat-slide-toggle [checked]="permission.permissionLevel === 'EDITOR'"
+          (change)="emit( permission.userId, $event.checked ? 'EDITOR' : 'VIEWER')">
+          編集許可
+        </mat-slide-toggle>
+      </mat-list-item>
+    </div>
+  </mat-card-content>
+</mat-card>
+
+<!-- **Notes:**
+- I've used `mat-card` to encapsulate the sharing settings, which is a common Angular Material component for displaying content and actions on a single topic.
+- The `*ngFor` directive is used to iterate over the `permissions` array provided by the `@Input`.
+- The `mat-list-item` is used to display each collaborator's information and their respective toggle for editing permissions.
+- The `mat-slide-toggle` is used to allow the user to toggle the editing permission for each collaborator. The `checked` property is bound to a condition that checks if the current permission level is 'EDITOR'.
+- The `(change)` event on the `mat-slide-toggle` emits an update event with the new permission level when toggled.
+- I've used pipes `userName` and `permissionLevel` as placeholders for translating the user ID to a user name and permission level to a human-readable format, respectively. These would need to be implemented in the component or as custom pipes.
+- The `update.emit` method is called without specifying the name of the `@Output` as per the instructions.
+- The text is in Japanese as per the requirement.
+
+**Assumptions:**
+- Custom pipes `userName` and `permissionLevel` are assumed to be available for translating IDs to names and permission levels to readable text.
+- The `update` method is assumed to be the method bound to the `@Output` event emitter in the component class.
+- The `Permission` model is assumed to have a `userId` and `permissionLevel` property based on the provided model classes. -->

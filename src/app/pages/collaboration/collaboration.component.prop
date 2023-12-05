@@ -1,0 +1,24 @@
+To create the TypeScript component class (`CollaborationComponent.ts`) that works with the provided Angular template, we would need to define the following:
+
+### Variables
+1. `project`, type: `Project`, description: An object containing the project data that is passed as an input to the `SharingSettingsComponent`.
+
+### Constants
+1. There are no explicit constants defined in the HTML snippet provided. However, if the column names for a `mat-table` are needed (not shown in the HTML), they would typically be defined as an array of strings in the TypeScript file. For example:
+   - `displayedColumns`, type: `string[]`, description: An array of strings representing the column names for a `mat-table`.
+
+### ViewChild
+1. There are no `ViewChild` references indicated in the HTML snippet provided. However, if you need to interact with the `mat-tab-group` or any of the tabs directly from the TypeScript code, you might use `ViewChild`. For example:
+   - `tabGroup`, type: `MatTabGroup`, description: A reference to the `MatTabGroup` to interact with the tabs programmatically.
+
+### Functions
+1. There are no functions explicitly required by the HTML snippet provided. However, you might have functions to handle events or to perform actions when a tab is changed. For example:
+   - `onTabChange`, type: `function(event: MatTabChangeEvent): void`, description: A function that is called when a new tab is selected.
+
+### Additional Notes
+- The `project` variable would need to be populated from a parent component or fetched from a service.
+- If the `mat-tab-group` requires interaction, such as selecting a specific tab programmatically, additional functions and `ViewChild` references would be necessary.
+- If the `mat-table` is part of the child components (`app-sharing-settings`, `app-comments-section`, or `app-version-control`), then the `displayedColumns` constant would be defined within those child components, not in the `CollaborationComponent`.
+- The `projectId` is assumed to be a property of the `project` object, hence why it is accessed as `project.id`. If this is not the case, a separate `projectId` variable would need to be defined.
+
+Please note that the actual implementation may require additional variables, constants, `ViewChild` references, and functions depending on the specific logic and requirements of the `CollaborationComponent` and its child components.

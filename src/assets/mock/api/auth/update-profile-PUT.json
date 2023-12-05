@@ -1,0 +1,9 @@
+{
+    "user": {
+        "id": 3,
+        "name": "佐藤花子",
+        "email": "hanako.sato@example.com",
+        "role": "GUEST",
+        "profilePictureUrl": "https://example.com/profiles/hanako.jpg"
+    }
+}
